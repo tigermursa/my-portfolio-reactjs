@@ -1,0 +1,5 @@
+.hero-photo {
+  border-top-right-radius: 90px;
+  border-bottom-left-radius: 90px;
+  box-shadow: 4px 5px 8px rgb(0, 0, 0);
+}

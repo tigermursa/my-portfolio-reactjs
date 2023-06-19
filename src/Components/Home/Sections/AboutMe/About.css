@@ -1,0 +1,70 @@
+.about-photo {
+  border-bottom-right-radius: 90px;
+  border-top-left-radius: 90px;
+  box-shadow: 4px 5px 8px rgb(0, 0, 0);
+}
+
+@keyframes bouncingAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#moving-element {
+  display: inline-block;
+  animation-name: bouncingAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Dot animation */
+
+.typing-animation {
+  display: inline-block;
+  width: 60px;
+  text-align: left;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+  margin-right: 3px;
+  opacity: 0;
+  animation: typing-animation 1s infinite;
+}
+
+@keyframes typing-animation {
+  0%,
+  80% {
+    opacity: 0;
+  }
+  20%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.dot:nth-child(4) {
+  animation-delay: 0.6s;
+}

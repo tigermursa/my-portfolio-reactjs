@@ -1,0 +1,21 @@
+#animation {
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.1em solid;
+  animation: typing 6s steps(40) infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  90% {
+    width: 60%;
+  }
+  100% {
+    width: 90%;
+    /* Add a delay of 4 seconds (4000ms) */
+    animation-delay: 10s;
+  }
+}

@@ -1,0 +1,30 @@
+.news-ticker-container {
+    overflow: hidden;
+    height: 30px; /* Adjust the height as needed */
+  }
+  
+  .news-ticker {
+    animation: marquee 25s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .news-ticker ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .news-ticker ul li {
+    margin-right: 20px; /* Adjust the spacing between news items */
+    white-space: nowrap;
+  }
+  
