@@ -1,0 +1,8 @@
+.env.local
+
+node_modules
+firebase.json
+package-lock.json
+package.json
+dist
+.firebase
