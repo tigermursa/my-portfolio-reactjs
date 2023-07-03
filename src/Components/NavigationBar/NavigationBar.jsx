@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useTransition, animated } from "react-spring";
 
 const NavigationBar = ({ button }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,16 +13,19 @@ const NavigationBar = ({ button }) => {
     setIsMenuOpen(false);
   };
 
+  const menuTransition = useTransition(isMenuOpen, {
+    from: { opacity: 0, transform: "translateY(-10px)" },
+    enter: { opacity: 1, transform: "translateY(0px)" },
+    leave: { opacity: 0, transform: "translateY(-10px)" },
+    config: { duration: 200 },
+  });
+
   return (
-    <div>
-      <div className="navbar bg-base-100">
+    <div className="w-full  flex justify-between items-center navbar">
+      <div className="lg:hidden">
         <div className="navbar-start">
           <div className="dropdown">
-            <label
-              tabIndex={0}
-              className="btn btn-ghost lg:hidden"
-              onClick={toggleMenu}
-            >
+            <label tabIndex={0} className="btn btn-ghost" onClick={toggleMenu}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -37,74 +41,91 @@ const NavigationBar = ({ button }) => {
                 />
               </svg>
             </label>
-            {isMenuOpen && (
-              <ul
-                tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <NavLink to="/" onClick={closeMenu}>
-                    Home
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/about" onClick={closeMenu}>
-                    About Me
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/services" onClick={closeMenu}>
-                    Services
-                  </NavLink>
-                </li>
-                <li>
-                  <a
-                    href="https://drive.google.com/file/d/1w0d9kAlLsHRucE-ItCb8Z5_Vq_x2Py-w/view?usp=share_link"
-                    target="_blank"
-                    rel="noopener noreferrer"
+            {menuTransition(
+              (style, item) =>
+                item && (
+                  <animated.ul
+                    tabIndex={0}
+                    className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                    style={style}
                   >
-                    Resume
-                  </a>
-                </li>
-                <li>
-                  <NavLink to="/contact" onClick={closeMenu}>
-                    Contact Me
-                  </NavLink>
-                </li>
-                {button && <li>{button}</li>}
-              </ul>
+                    <li>
+                      <NavLink to="/" onClick={closeMenu}>
+                        Home
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/about" onClick={closeMenu}>
+                        About Me
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/services" onClick={closeMenu}>
+                        Services
+                      </NavLink>
+                    </li>
+                    <li>
+                      <a
+                        href="https://drive.google.com/file/d/1yd-OFM_gvDRnVsaNLj0mSrS3_MoKbJaS/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={closeMenu}
+                      >
+                        Resume
+                      </a>
+                    </li>
+                    <li>
+                      <NavLink to="/contact" onClick={closeMenu}>
+                        Contact Me
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/blogs" onClick={closeMenu}>
+                        Blogs
+                      </NavLink>
+                    </li>
+                    {button && <li>{button}</li>}
+                  </animated.ul>
+                )
             )}
           </div>
-          <a className="btn btn-ghost normal-case text-4xl font-bold ">
+        </div>
+      </div>
+      <div className="hidden lg:block">
+        <NavLink to="/">
+          <a className="btn btn-ghost normal-case text-4xl font-bold">
             Mursalin Hossain
           </a>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about">About Me</NavLink>
-            </li>
-            <li>
-              <NavLink to="/services">Services</NavLink>
-            </li>
-            <li>
-              <a
-                href="https://drive.google.com/file/d/1XB8IGWTj6a8gZW3QlU91Na5muvUJrBLL/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Resume
-              </a>
-            </li>
-            <li>
-              <NavLink to="/contact">Contact Me</NavLink>
-            </li>
-            {button && <li>{button}</li>}
-          </ul>
-        </div>
+        </NavLink>
+      </div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">
+          <li className="me-4">
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li className="me-4">
+            <NavLink to="/about">About Me</NavLink>
+          </li>
+          <li className="me-4">
+            <NavLink to="/services">Services</NavLink>
+          </li>
+          <li className="me-4">
+            <a
+              href="https://drive.google.com/file/d/1yd-OFM_gvDRnVsaNLj0mSrS3_MoKbJaS/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
+          </li>
+          <li className="me-4">
+            <NavLink to="/contact">Contact Me</NavLink>
+          </li>
+          <li className="me-4">
+            <NavLink to="/blogs">Blogs</NavLink>
+          </li>
+          {button && <li>{button}</li>}
+        </ul>
       </div>
     </div>
   );

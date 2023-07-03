@@ -3,7 +3,8 @@
   white-space: nowrap;
   overflow: hidden;
   border-right: 0.1em solid;
-  animation: typing 6s steps(40) infinite;
+  width: 0;
+  animation: typing 6s steps(40) infinite, gradient-animation 10s linear infinite;
 }
 
 @keyframes typing {
@@ -19,3 +20,19 @@
     animation-delay: 10s;
   }
 }
+
+/* Define the animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Apply the animation to the image */
+.animated-gradient {
+  animation: gradientAnimation 10s ease-in-out infinite;
+  background: linear-gradient(to right, #ff4fd2, #9f00ff, #00eaff, #00ff94, #fffb00);
+  background-size: 400% 400%;
+}
+
+

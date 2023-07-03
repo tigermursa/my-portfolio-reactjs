@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import CountUp from "react-countup";
 
 const Skills = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
   const skills = [
     { name: "HTML", percentage: 91 },
     { name: "CSS", percentage: 79 },
@@ -10,107 +17,92 @@ const Skills = () => {
     { name: "Bootstrap", percentage: 77 },
     { name: "JavaScript", percentage: 62 },
     { name: "ES6", percentage: 74 },
-    { name: "React js", percentage: 71 },
+    { name: "React vite", percentage: 71 },
     { name: "MongoDB", percentage: 62 },
     { name: "Firebase", percentage: 67 },
     { name: "Rest APIs", percentage: 58 },
     { name: "Node", percentage: 59 },
-    { name: "Express js", percentage: 63 },
-    { name: "Next js", percentage: 10 },
+    { name: "Express", percentage: 63 },
+    { name: "Next.js", percentage: 10 },
     { name: "JWT", percentage: 30 },
     { name: "VS Code", percentage: 89 },
     { name: "Git Hub", percentage: 78 },
-    { name: "Figma", percentage: 77 },
+    { name: "Figma", percentage: 25 },
     { name: "Netlify", percentage: 85 },
     { name: "Vercel", percentage: 62 },
     { name: "ChatGpt", percentage: 92 },
-    
   ];
 
   const getColorByPercentage = (percentage) => {
     if (percentage >= 69) {
-      return "#4CAF50"; // Green
+      return "bg-green-500"; // Green
     } else if (percentage >= 59) {
-      return "#FFC107"; // Yellow
+      return "bg-yellow-500"; // Yellow
     } else {
-      return "#F44336"; // Red
+      return "bg-red-500"; // Red
     }
   };
 
-  const [isAnimated, setIsAnimated] = useState(false);
+  const [inView, setInView] = useState(false);
 
   useEffect(() => {
-    let timer1;
-    let timer2;
+    const handleScroll = () => {
+      const position = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const offset = windowHeight * 0.8;
 
-    const startAnimation = () => {
-      setIsAnimated(true);
-      timer1 = setTimeout(() => {
-        setIsAnimated(false);
-        timer2 = setTimeout(startAnimation, 700);
-      }, 4000);
+      if (position > offset) {
+        setInView(true);
+      }
     };
 
-    startAnimation();
-
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const rows = Math.ceil(skills.length / 4);
 
   return (
-    <div className="mb-16 mx-auto">
-      <div className="text-start w-7/12 mx-auto mb-7">
-        <h1 className="text-center text-5xl mb-24 font-semibold">
-          My Skills{" "}
-          <div className="typing-animation">
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-          </div>
-        </h1>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-14">
-          {skills.map((skill, index) => (
-            <div key={index} className="flex items-center ">
-              <div className="w-full">
-                <div className="relative">
-                  <div
-                    className={`pb-circular-progress-bar ${
-                      isAnimated ? "animated" : ""
-                    }`}
-                    style={{ width: "80px", height: "80px" }}
-                  >
-                    <CircularProgressbar
-                      value={isAnimated ? skill.percentage : 0}
-                      text={`${isAnimated ? skill.percentage : 0}%`}
-                      strokeWidth={11}
-                      styles={buildStyles({
-                        pathColor: getColorByPercentage(skill.percentage),
-                        trailColor: "#d6d6d6",
-                        rotation: (0.5 + index / skills.length) % 1,
-                        strokeLinecap: "butt",
-                      })}
-                    />
-                  </div>
-                </div>
-                <div className="ms-3 mt-5 font-bold">{skill.name}</div>
+    <div className="mb-20">
+      <h1 className="font-serif text-4xl md:text-5xl font-bold mb-5 p-5">
+        My Skills{" "}
+        <div className="typing-animation">
+          <span className="dot"></span>
+          <span className="dot"></span>
+          <span className="dot"></span>
+        </div>
+      </h1>
+      <div className="flex flex-wrap -mx-4 p-20">
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            className="w-full sm:w-1/2 md:w-1/4 px-4 mb-8"
+            data-aos={inView ? "fade-up" : ""}
+          >
+            <div className="flex items-center mb-2">
+              <div className="w-1/2 text-sm text-start ms-1">{skill.name}</div>
+              <div className="w-1/2 text-right text-sm font-medium">
+                <CountUp end={skill.percentage} suffix="%" duration={10} />
               </div>
             </div>
-          ))}
-        </div>
+            <div className="h-3 w-full bg-gray-200 rounded-lg overflow-hidden">
+              <div
+                className={`h-full rounded-lg ${getColorByPercentage(
+                  skill.percentage
+                )} progress-bar-animation`}
+                style={{
+                  width: inView ? `${skill.percentage}%` : 0,
+                  transition: "width 10s",
+                }}
+              ></div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
 export default Skills;
-
-
-
-// { name: "React Native", percentage: 0 },
-//     { name: "PHP", percentage: 0 },
-//     { name: "Python", percentage: 0 },
-//     { name: "JAVA", percentage: 0 },

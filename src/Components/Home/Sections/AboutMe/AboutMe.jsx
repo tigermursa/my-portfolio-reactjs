@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./About.css";
 import aboutImg from "../../../../../public/img/about.png";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const AboutMe = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
   return (
-    <div>
+    
       <div className="flex flex-col items-center mt-28 mb-40 sm:flex-row">
-        <div className="order-2 sm:order-1 p-6">
-          <img className="w-full h-auto about-photo " src={aboutImg} alt="" />
+        <div className="order-2 sm:order-1 p-6" data-aos="fade-right">
+          <img className="w-full h-auto about-photo p-1 animated-gradient " src={aboutImg} alt="" />
         </div>
-        <div className="w-full sm:w-7/12 mx-auto text-center sm:text-left mb-6 order-1 sm:order-2">
-          <h1 className="text-5xl mb-5 p-5 font-semibold ">
+        <div className="w-full sm:w-7/12 mx-auto text-center sm:text-left mb-6 order-1 sm:order-2"  data-aos="fade-left">
+          <h1 className="font-serif text-4xl md:text-5xl  font-bold mb-5 p-5  ">
             About Me{" "}
             <div className="typing-animation">
               <span className="dot"></span>
@@ -45,7 +51,7 @@ const AboutMe = () => {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 };
 

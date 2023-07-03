@@ -1,5 +1,4 @@
 .env.local
-
 node_modules
 firebase.json
 package-lock.json

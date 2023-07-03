@@ -5,7 +5,7 @@ import nextjsImage from "../../../../public/img/next-js-i.png";
 const CurrentlyLearning = () => {
   return (
     <div className="flex justify-center mt-40 mb-40 flex-col">
-      <h1 className="text-center text-5xl mb-24 font-semibold">
+      <h1 className="text-center  mb-24 font-serif text-4xl md:text-5xl  font-bold">
         Currently learning
         <div className="typing-animation">
           <span className="dot"></span>

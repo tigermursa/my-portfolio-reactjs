@@ -1,18 +1,33 @@
-import React, { useState } from "react";
-import toygem from "../../../../../public/img/websitetoygem.jpg";
+import React, { useEffect, useState } from "react";
+
 import foodmonkey from "../../../../../public/img/webfoodmonkey.jpg";
 import emajhon from "../../../../../public/img/websiteemajhon.jpg";
 import todo from "../../../../../public/img/Screenshot 2023-06-06 162457.jpg";
 import snap from "../../../../../public/img/websitesnapart.jpg";
 import techat from "../../../../../public/img/teachat.jpg";
 
+
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Projects = () => {
+  // AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+      easing: "linear",
+    });
+  }, []);
+
   const [hovered1, setHovered1] = useState(false);
   const [hovered2, setHovered2] = useState(false);
   const [hovered3, setHovered3] = useState(false);
   const [hovered4, setHovered4] = useState(false);
   const [hovered5, setHovered5] = useState(false);
   const [hovered6, setHovered6] = useState(false);
+  const [hovered7, setHovered7] = useState(false);
+  const [hovered8, setHovered8] = useState(false);
+  const [hovered9, setHovered9] = useState(false);
 
   const handleMouseEnter1 = () => {
     setHovered1(true);
@@ -60,11 +75,34 @@ const Projects = () => {
     setHovered6(false);
   };
 
+  const handleMouseEnter7 = () => {
+    setHovered7(true);
+  };
+
+  const handleMouseLeave7 = () => {
+    setHovered7(false);
+  };
+
+  const handleMouseEnter8 = () => {
+    setHovered8(true);
+  };
+
+  const handleMouseLeave8 = () => {
+    setHovered8(false);
+  };
+  const handleMouseEnter9 = () => {
+    setHovered9(true);
+  };
+
+  const handleMouseLeave9 = () => {
+    setHovered9(false);
+  };
+
   return (
-    <div className="ms-4 me-4 ">
-      <h1 className="text-5xl mb-5 font-semibold">
+    <div className="ms-4 me-4 flex flex-col justify-center items-center">
+      <h1 className="font-serif text-4xl md:text-5xl  font-bold mb-5 ">
         {" "}
-        Projects{" "}
+        My Projects{" "}
         <div className="typing-animation">
           <span className="dot"></span>
           <span className="dot"></span>
@@ -72,16 +110,151 @@ const Projects = () => {
         </div>{" "}
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-        {/* Project no 1 */}
-        <div className="mt-5 mb-5 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Project no 9 */}
+        <div
+          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
+          data-aos="fade-right"
+        >
           <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl opacity-75  "
+            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl opacity-100 "
+            onMouseEnter={handleMouseEnter9}
+            onMouseLeave={handleMouseLeave9}
+          >
+            <figure>
+              <img src="" alt="Shoes" />
+            </figure>
+            <div
+              className={`card-body text-center absolute bottom-0 left-0 transition-transform duration-1000 ${
+                hovered9 ? "translate-y-0" : "translate-y-full"
+              }`}
+            >
+              <div
+                className={`p-5 ${
+                  hovered9
+                    ? "transform translate-y-0 opacity-100"
+                    : "transform translate-y-12 opacity-0"
+                }`}
+                style={{ backgroundColor: "" }}
+              >
+                <h2 className="font-bold text-2xl">Hire Sync</h2>
+                <p className="mt-7 text-xl font-semibold">An digital recruitment solution app </p>
+                <div className="card-actions justify-center">
+                  <button className="btn btn-outline  mt-5">
+                    <a
+                      href="https://hire-sync.web.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Visit Now
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Project no 7 */}
+        <div
+          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
+          data-aos="fade-right"
+        >
+          <div
+            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl opacity-100 "
+            onMouseEnter={handleMouseEnter7}
+            onMouseLeave={handleMouseLeave7}
+          >
+            <figure>
+              <img src="" alt="Shoes" />
+            </figure>
+            <div
+              className={`card-body text-center absolute bottom-0 left-0 transition-transform duration-1000 ${
+                hovered7 ? "translate-y-0" : "translate-y-full"
+              }`}
+            >
+              <div
+                className={`p-5 ${
+                  hovered7
+                    ? "transform translate-y-0 opacity-100"
+                    : "transform translate-y-12 opacity-0"
+                }`}
+                style={{ backgroundColor: "" }}
+              >
+                <h2 className="font-bold text-2xl">Grocery-store</h2>
+                <p className="mt-7 text-xl font-semibold">An online store</p>
+                <div className="card-actions justify-center">
+                  <button className="btn btn-outline  mt-5">
+                    <a
+                      href="https://grocery-store-53ee3.web.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Visit Now
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Project no 8 */}
+        <div
+          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
+          data-aos="fade-right"
+        >
+          <div
+            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100 "
+            onMouseEnter={handleMouseEnter8}
+            onMouseLeave={handleMouseLeave8}
+          >
+            <figure className="bg-opacity- ">
+              <img src="" alt="Shoes" />
+            </figure>
+            <div
+              className={`card-body text-center absolute bottom-0 left-0 transition-transform duration-1000 ${
+                hovered8 ? "translate-y-0" : "translate-y-full"
+              }`}
+            >
+              <div
+                className={`p-5 ${
+                  hovered8
+                    ? "transform translate-y-0 opacity-100"
+                    : "transform translate-y-12 opacity-0"
+                }`}
+                style={{ backgroundColor: "" }}
+              >
+                <h2 className="font-bold text-2xl">Quantum Tech</h2>
+                <p className="mt-7 text-xl font-semibold">
+                  A Tech Company Site{" "}
+                </p>
+                <div className="card-actions justify-center">
+                  <button className="btn btn-outline  mt-5">
+                    <a
+                      href="https://quantum-tech-74ed5.web.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Visit Now
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Project no 1 */}
+        <div
+          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
+          data-aos="fade-right"
+        >
+          <div
+            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100  "
             onMouseEnter={handleMouseEnter1}
             onMouseLeave={handleMouseLeave1}
           >
             <figure className="bg-opacity- ">
-              <img className="" src={toygem} alt="Shoes" />
+              <img className="" src="" alt="Shoes" />
             </figure>
             <div
               className={`card-body text-center absolute bottom-0 left-0 transition-transform duration-1000 ${
@@ -115,11 +288,13 @@ const Projects = () => {
             </div>
           </div>
         </div>
-
         {/* Project no 2 */}
-        <div className="mt-5 mb-5">
+        <div
+          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
+          data-aos="fade-right"
+        >
           <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl opacity-75 "
+            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100 "
             onMouseEnter={handleMouseEnter2}
             onMouseLeave={handleMouseLeave2}
           >
@@ -160,9 +335,9 @@ const Projects = () => {
         </div>
 
         {/* Project no 3 */}
-        <div className="mt-5 mb-5">
+        <div className="mt-5 mb-5 hidden" data-aos="fade-left ">
           <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl opacity-75 "
+            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100 "
             onMouseEnter={handleMouseEnter3}
             onMouseLeave={handleMouseLeave3}
           >
@@ -203,9 +378,12 @@ const Projects = () => {
         </div>
 
         {/* Project no 4 */}
-        <div className="mt-5 mb-5">
+        <div
+          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
+          data-aos="fade-right"
+        >
           <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl opacity-75 "
+            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100 "
             onMouseEnter={handleMouseEnter4}
             onMouseLeave={handleMouseLeave4}
           >
@@ -246,9 +424,12 @@ const Projects = () => {
         </div>
 
         {/* Project no 5 */}
-        <div className="mt-5 mb-5">
+        <div
+          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
+          data-aos="fade-right"
+        >
           <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl opacity-75 "
+            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100 "
             onMouseEnter={handleMouseEnter5}
             onMouseLeave={handleMouseLeave5}
           >
@@ -289,9 +470,12 @@ const Projects = () => {
         </div>
 
         {/* Project no 6 */}
-        <div className="mt-5 mb-5">
+        <div
+          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
+          data-aos="fade-right"
+        >
           <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl opacity-75 "
+            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100 "
             onMouseEnter={handleMouseEnter6}
             onMouseLeave={handleMouseLeave6}
           >
