@@ -1,14 +1,49 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import Lottie from "react-lottie";
+import webdevelopment from "../../../../../public/lottie/21367-green-background-webdevelopment.json";
+import responsive from "../../../../../public/lottie/-responsive-design.json";
+import frontend from "../../../../../public/lottie/frontend.json";
+import singlepage from "../../../../../public/lottie/single.json";
 const MyServices = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
     });
   }, []);
-
+  const defaultOptions1 = {
+    loop: true,
+    autoplay: true,
+    animationData: webdevelopment,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const defaultOptions2 = {
+    loop: true,
+    autoplay: true,
+    animationData: responsive,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const defaultOptions3 = {
+    loop: true,
+    autoplay: true,
+    animationData: frontend,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const defaultOptions4 = {
+    loop: true,
+    autoplay: true,
+    animationData: singlepage,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   const servicesData = [
     {
       _id: 1,
@@ -46,6 +81,7 @@ const MyServices = () => {
 
   return (
     <div className="mt-40 mb-40 flex flex-col justify-center items-center mx-auto">
+      <div></div>
       <h1 className="font-serif text-4xl md:text-5xl font-bold mb-5 p-5">
         My Services{" "}
         <div className="typing-animation">
@@ -60,11 +96,9 @@ const MyServices = () => {
           className="w-full md:w-96 rounded-xl shadow-xl border-2 border-blue-500 hover:border-white hover:bg-cyan-600 hover:text-white cursor-pointer"
           style={{ height: "450px" }}
         >
-          <img
-            className="rounded-full w-full h-60 p-10"
-            src="../../../../../img/web-development.gif"
-            alt={servicesData[0].serviceName}
-          />
+          <div className="w-60 mx-auto">
+            <Lottie options={defaultOptions1} />
+          </div>
           <h2 className="text-2xl font-bold pt-5">
             {servicesData[0].serviceName}
           </h2>
@@ -77,11 +111,10 @@ const MyServices = () => {
           className=" w-full md:w-96 rounded-xl shadow-xl border-2  border-blue-500 hover:border-white hover:bg-cyan-600 hover:text-white cursor-pointer"
           style={{ height: "450px" }}
         >
-          <img
-            className="rounded-full w-full h-60 p-10"
-            src="../../../../../img/web-design.gif"
-            alt={servicesData[1].serviceName}
-          />
+          <div className="w-60 mx-auto">
+            <Lottie options={defaultOptions2} />
+          </div>
+
           <h2 className="text-2xl font-bold pt-5">
             {servicesData[1].serviceName}
           </h2>
@@ -94,11 +127,9 @@ const MyServices = () => {
           className=" w-full md:w-96 rounded-xl shadow-xl border-2  border-blue-500 hover:border-white hover:bg-cyan-600 hover:text-white cursor-pointer"
           style={{ height: "450px" }}
         >
-          <img
-            className="rounded-full w-full h-60 p-10"
-            src="../../../../../img/90586-graphic-designer.gif"
-            alt={servicesData[2].serviceName}
-          />
+          <div className="w-60 mx-auto">
+            <Lottie options={defaultOptions3} />
+          </div>
           <h2 className="text-2xl font-bold pt-5">
             {servicesData[2].serviceName}
           </h2>
@@ -111,11 +142,9 @@ const MyServices = () => {
           className="w-full md:w-96 rounded-xl shadow-xl border-2  border-blue-500 hover:border-white hover:bg-cyan-600 hover:text-white cursor-pointer"
           style={{ height: "450px" }}
         >
-          <img
-            className="rounded-full w-full h-60 p-10"
-            src="../../../../../img/singlepaget.gif"
-            alt={servicesData[3].serviceName}
-          />
+          <div className="w-60 mx-auto">
+            <Lottie options={defaultOptions4} />
+          </div>
           <h2 className="text-2xl font-bold pt-5">
             {servicesData[3].serviceName}
           </h2>

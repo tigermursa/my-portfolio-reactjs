@@ -1,514 +1,332 @@
-import React, { useEffect, useState } from "react";
-
-import foodmonkey from "../../../../../public/img/webfoodmonkey.jpg";
-import emajhon from "../../../../../public/img/websiteemajhon.jpg";
-import todo from "../../../../../public/img/Screenshot 2023-06-06 162457.jpg";
-import snap from "../../../../../public/img/websitesnapart.jpg";
-import techat from "../../../../../public/img/teachat.jpg";
-
-
-
+import React, { useEffect } from "react";
+import "./Projects.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import {
+  IoLogoJavascript,
+  IoLogoNodejs,
+  IoLogoReact,
+  IoLogoVercel,
+  IoLogoFirebase,
+  IoLogoNpm,
+} from "react-icons/io5";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaBootstrap,
+  FaGithub,
+  FaGoogle,
+  FaRobot,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiMongodb,
+  SiNextdotjs,
+  SiExpress,
+} from "react-icons/si";
+import { a } from "react-scroll";
+
 const Projects = () => {
-  // AOS
   useEffect(() => {
     AOS.init({
-      duration: 2000,
-      easing: "linear",
+      duration: 1000,
     });
   }, []);
 
-  const [hovered1, setHovered1] = useState(false);
-  const [hovered2, setHovered2] = useState(false);
-  const [hovered3, setHovered3] = useState(false);
-  const [hovered4, setHovered4] = useState(false);
-  const [hovered5, setHovered5] = useState(false);
-  const [hovered6, setHovered6] = useState(false);
-  const [hovered7, setHovered7] = useState(false);
-  const [hovered8, setHovered8] = useState(false);
-  const [hovered9, setHovered9] = useState(false);
-
-  const handleMouseEnter1 = () => {
-    setHovered1(true);
-  };
-
-  const handleMouseLeave1 = () => {
-    setHovered1(false);
-  };
-
-  const handleMouseEnter2 = () => {
-    setHovered2(true);
-  };
-
-  const handleMouseLeave2 = () => {
-    setHovered2(false);
-  };
-  const handleMouseEnter3 = () => {
-    setHovered3(true);
-  };
-
-  const handleMouseLeave3 = () => {
-    setHovered3(false);
-  };
-  const handleMouseEnter4 = () => {
-    setHovered4(true);
-  };
-
-  const handleMouseLeave4 = () => {
-    setHovered4(false);
-  };
-
-  const handleMouseEnter5 = () => {
-    setHovered5(true);
-  };
-
-  const handleMouseLeave5 = () => {
-    setHovered5(false);
-  };
-
-  const handleMouseEnter6 = () => {
-    setHovered6(true);
-  };
-
-  const handleMouseLeave6 = () => {
-    setHovered6(false);
-  };
-
-  const handleMouseEnter7 = () => {
-    setHovered7(true);
-  };
-
-  const handleMouseLeave7 = () => {
-    setHovered7(false);
-  };
-
-  const handleMouseEnter8 = () => {
-    setHovered8(true);
-  };
-
-  const handleMouseLeave8 = () => {
-    setHovered8(false);
-  };
-  const handleMouseEnter9 = () => {
-    setHovered9(true);
-  };
-
-  const handleMouseLeave9 = () => {
-    setHovered9(false);
-  };
-
   return (
-    <div className="ms-4 me-4 flex flex-col justify-center items-center">
-      <h1 className="font-serif text-4xl md:text-5xl  font-bold mb-5 ">
-        {" "}
-        My Projects{" "}
+    <div>
+      <h1 className="font-serif text-4xl md:text-5xl font-bold mb-5 p-5">
+        My Projects
         <div className="typing-animation">
           <span className="dot"></span>
           <span className="dot"></span>
           <span className="dot"></span>
-        </div>{" "}
+        </div>
       </h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Project no 9 */}
-        <div
-          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
-          data-aos="fade-right"
-        >
-          <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl opacity-100 "
-            onMouseEnter={handleMouseEnter9}
-            onMouseLeave={handleMouseLeave9}
-          >
-            <figure>
-              <img src="" alt="Shoes" />
-            </figure>
-            <div
-              className={`card-body text-center absolute bottom-0 left-0 transition-transform duration-1000 ${
-                hovered9 ? "translate-y-0" : "translate-y-full"
-              }`}
-            >
-              <div
-                className={`p-5 ${
-                  hovered9
-                    ? "transform translate-y-0 opacity-100"
-                    : "transform translate-y-12 opacity-0"
-                }`}
-                style={{ backgroundColor: "" }}
-              >
-                <h2 className="font-bold text-2xl">Hire Sync</h2>
-                <p className="mt-7 text-xl font-semibold">An digital recruitment solution app </p>
-                <div className="card-actions justify-center">
-                  <button className="btn btn-outline  mt-5">
-                    <a
-                      href="https://hire-sync.web.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visit Now
-                    </a>
-                  </button>
+      <div className="project card ">
+        <div className="Uni-Blocks cursor-pointer">
+          <div className="Uni-block" id="uni-1" data-aos="fade-right">
+            <div className="uni-main">
+              <div className="uni-card uni-card1">
+                <div className="uni-content">
+                  <img src="/img/grocery-store.jpg" alt="Image 1" />
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Project no 7 */}
-        <div
-          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
-          data-aos="fade-right"
-        >
-          <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl opacity-100 "
-            onMouseEnter={handleMouseEnter7}
-            onMouseLeave={handleMouseLeave7}
-          >
-            <figure>
-              <img src="" alt="Shoes" />
-            </figure>
-            <div
-              className={`card-body text-center absolute bottom-0 left-0 transition-transform duration-1000 ${
-                hovered7 ? "translate-y-0" : "translate-y-full"
-              }`}
-            >
-              <div
-                className={`p-5 ${
-                  hovered7
-                    ? "transform translate-y-0 opacity-100"
-                    : "transform translate-y-12 opacity-0"
-                }`}
-                style={{ backgroundColor: "" }}
-              >
-                <h2 className="font-bold text-2xl">Grocery-store</h2>
-                <p className="mt-7 text-xl font-semibold">An online store</p>
-                <div className="card-actions justify-center">
-                  <button className="btn btn-outline  mt-5">
+              <div className="uni-card uni-card2">
+                <div className="uni-content">
+                  <p className="font-bold">Grocery Store</p>
+                  <div className="text-sm font-semibold text-slate-600 mt-3">
+                    <p>An online local grocery shop</p>
+                    <div className="flex gap-3 text-2xl mt-3 mb-3">
+                      <IoLogoReact className="text-blue-500" />
+                      <SiTailwindcss className="text-teal-500" />
+                      <IoLogoNpm className="text-red-500" />
+                      <SiExpress className="text-purple-500" />
+                      <IoLogoVercel className="text-pink-500" />
+                      <SiMongodb className="text-green-500" />
+                      <IoLogoFirebase className="text-yellow-500" />
+                    </div>
+                  </div>
+                  <button className="btn btn-outline mt-2 ">
                     <a
                       href="https://grocery-store-53ee3.web.app/"
                       target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visit Now
+                      rel="noopener noreferrer">
+                      Visit now
                     </a>
                   </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        {/* Project no 8 */}
-        <div
-          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
-          data-aos="fade-right"
-        >
-          <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100 "
-            onMouseEnter={handleMouseEnter8}
-            onMouseLeave={handleMouseLeave8}
-          >
-            <figure className="bg-opacity- ">
-              <img src="" alt="Shoes" />
-            </figure>
-            <div
-              className={`card-body text-center absolute bottom-0 left-0 transition-transform duration-1000 ${
-                hovered8 ? "translate-y-0" : "translate-y-full"
-              }`}
-            >
-              <div
-                className={`p-5 ${
-                  hovered8
-                    ? "transform translate-y-0 opacity-100"
-                    : "transform translate-y-12 opacity-0"
-                }`}
-                style={{ backgroundColor: "" }}
-              >
-                <h2 className="font-bold text-2xl">Quantum Tech</h2>
-                <p className="mt-7 text-xl font-semibold">
-                  A Tech Company Site{" "}
-                </p>
-                <div className="card-actions justify-center">
-                  <button className="btn btn-outline  mt-5">
-                    <a
-                      href="https://quantum-tech-74ed5.web.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visit Now
-                    </a>
-                  </button>
+          <div className="Uni-block" id="uni-2" data-aos="fade-right">
+            <div className="uni-main">
+              <div className="uni-card uni-card1">
+                <div className="uni-content">
+                  <img src="/img/hire=sync.jpg" alt="Image 2" />
+                </div>
+              </div>
+              <div className="uni-card uni-card2">
+                <div className="uni-content">
+                  <div>
+                    <p className="font-bold">Hire Sync</p>
+                    <div className="text-sm font-semibold text-slate-600 mt-3">
+                      <p>An Online Job Portal</p>
+                      <div className="flex gap-3 text-2xl mt-3 mb-3">
+                        <IoLogoReact className="text-blue-500" />
+                        <SiTailwindcss className="text-teal-500" />
+                        <IoLogoNpm className="text-red-500" />
+                        <SiExpress className="text-purple-500" />
+                        <IoLogoVercel className="text-pink-500" />
+                        <SiMongodb className="text-green-500" />
+                      </div>
+                      <button className="btn btn-outline mt-2 ">
+                        <a href="https://hire-sync.web.app/" target="_blank" rel="noopener noreferrer">
+                          Visit now
+                        </a>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        {/* Project no 1 */}
-        <div
-          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
-          data-aos="fade-right"
-        >
-          <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100  "
-            onMouseEnter={handleMouseEnter1}
-            onMouseLeave={handleMouseLeave1}
-          >
-            <figure className="bg-opacity- ">
-              <img className="" src="" alt="Shoes" />
-            </figure>
-            <div
-              className={`card-body text-center absolute bottom-0 left-0 transition-transform duration-1000 ${
-                hovered1 ? "translate-y-0" : "translate-y-full"
-              }`}
-            >
-              <div
-                className={`p-5 ${
-                  hovered1
-                    ? "transform translate-y-0 opacity-100"
-                    : "transform translate-y-12 opacity-0"
-                }`}
-                style={{ backgroundColor: "" }}
-              >
-                <h2 className="font-bold text-2xl">Toy Gem (Toy store)</h2>
-                <p className="mt-7 text-xl font-semibold">
-                  A MERN Project : Toy Gem (a toy store demo)
-                </p>
-                <div className="card-actions justify-center">
-                  <button className="btn btn-outline  mt-5">
-                    <a
-                      href="https://toy-gem.web.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visit Now
-                    </a>
-                  </button>
+          <div className="Uni-block" id="uni-3" data-aos="fade-right">
+            <div className="uni-main">
+              <div className="uni-card uni-card1">
+                <div className="uni-content">
+                  <img src="/img/quantum.jpg" alt="Image 3" />
+                </div>
+              </div>
+              <div className="uni-card uni-card2">
+                <div className="uni-content">
+                  <div>
+                    <p className="font-bold">Quantum Tech</p>
+                    <div className="text-sm font-semibold text-slate-600 mt-3">
+                      <p>A website for Tech company</p>
+                      <div className="flex gap-3 text-2xl mt-3 mb-3">
+                        <IoLogoReact className="text-blue-500" />
+                        <SiTailwindcss className="text-teal-500" />
+                        <IoLogoNpm className="text-red-500" />
+                        <SiExpress className="text-purple-500" />
+                        <IoLogoVercel className="text-pink-500" />
+                        <SiMongodb className="text-green-500" />
+                      </div>
+                      <button className="btn btn-outline mt-2 ">
+                        <a
+                          href="https://quantum-tech-74ed5.web.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Visit now
+                        </a>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        {/* Project no 2 */}
-        <div
-          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
-          data-aos="fade-right"
-        >
-          <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100 "
-            onMouseEnter={handleMouseEnter2}
-            onMouseLeave={handleMouseLeave2}
-          >
-            <figure className="bg-opacity- ">
-              <img src={foodmonkey} alt="Shoes" />
-            </figure>
-            <div
-              className={`card-body text-center absolute bottom-0 left-0 transition-transform duration-1000 ${
-                hovered2 ? "translate-y-0" : "translate-y-full"
-              }`}
-            >
-              <div
-                className={`p-5 ${
-                  hovered2
-                    ? "transform translate-y-0 opacity-100"
-                    : "transform translate-y-12 opacity-0"
-                }`}
-                style={{ backgroundColor: "" }}
-              >
-                <h2 className="font-bold text-2xl">Food Monkey</h2>
-                <p className="mt-7 text-xl font-semibold">
-                  A REACT Project Food Monkey( a recipe site)
-                </p>
-                <div className="card-actions justify-center">
-                  <button className="btn btn-outline  mt-5">
-                    <a
-                      href="https://food-monkey-83577.web.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visit Now
-                    </a>
-                  </button>
+          <div className="Uni-block" id="uni-4" data-aos="fade-left">
+            <div className="uni-main">
+              <div className="uni-card uni-card1">
+                <div className="uni-content">
+                  <img src="/img/snap-art.jpg" alt="Image 3" />
+                </div>
+              </div>
+              <div className="uni-card uni-card2">
+                <div className="uni-content">
+                  <div>
+                    <p className="font-bold">Snap Artistry</p>
+                    <div className="text-sm font-semibold text-slate-600 mt-3">
+                      <p>A site with Admin control panel!</p>
+                      <div className="flex gap-3 text-2xl mt-3 mb-3">
+                        <IoLogoReact className="text-blue-500" />
+                        <SiTailwindcss className="text-teal-500" />
+                        <IoLogoNpm className="text-red-500" />
+                        <SiExpress className="text-purple-500" />
+                        <IoLogoVercel className="text-pink-500" />
+                        <SiMongodb className="text-green-500" />
+                        <IoLogoFirebase className="text-yellow-500" />
+                      </div>
+                      <button className="btn btn-outline mt-2 ">
+                        <a
+                          href="https://summer-camp-81b20.web.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Visit now
+                        </a>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Project no 3 */}
-        <div className="mt-5 mb-5 hidden" data-aos="fade-left ">
-          <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100 "
-            onMouseEnter={handleMouseEnter3}
-            onMouseLeave={handleMouseLeave3}
-          >
-            <figure className="bg-opacity- ">
-              <img src={emajhon} alt="Shoes" />
-            </figure>
-            <div
-              className={`card-body text-center absolute bottom-0 left-0 transition-transform duration-1000 ${
-                hovered3 ? "translate-y-0" : "translate-y-full"
-              }`}
-            >
-              <div
-                className={`p-5 ${
-                  hovered3
-                    ? "transform translate-y-0 opacity-100"
-                    : "transform translate-y-12 opacity-0"
-                }`}
-                style={{ backgroundColor: "" }}
-              >
-                <h2 className="font-bold text-2xl">Ema Jhon</h2>
-                <p className="mt-7 text-xl font-semibold">
-                  A MERN Project e-commerce Site(pending work)
-                </p>
-                <div className="card-actions justify-center">
-                  <button className="btn btn-outline  mt-5">
-                    <a
-                      href="https://ema-jhon-42245.web.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visit Now
-                    </a>
-                  </button>
+          <div className="Uni-block" id="uni-5" data-aos="fade-left">
+            <div className="uni-main">
+              <div className="uni-card uni-card1">
+                <div className="uni-content">
+                  <img src="/img/teachat-app.jpg" alt="Image 3" />
+                </div>
+              </div>
+              <div className="uni-card uni-card2">
+                <div className="uni-content">
+                  <div>
+                    <p className="font-bold">Tea Chat</p>
+                    <div className="text-sm font-semibold text-slate-600 mt-3">
+                      <p>A social media app, Post a status now!</p>
+                      <div className="flex gap-3 text-2xl mt-3 mb-3">
+                        <IoLogoReact className="text-blue-500" />
+                        <SiTailwindcss className="text-teal-500" />
+                        <IoLogoNpm className="text-red-500" />
+                        <SiExpress className="text-purple-500" />
+                        <IoLogoVercel className="text-pink-500" />
+                        <SiMongodb className="text-green-500" />
+                        <IoLogoFirebase className="text-yellow-500" />
+                      </div>
+                      <button className="btn btn-outline mt-2 ">
+                        <a
+                          href="https://tea-chat-d0a15.web.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Visit now
+                        </a>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Project no 4 */}
-        <div
-          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
-          data-aos="fade-right"
-        >
-          <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100 "
-            onMouseEnter={handleMouseEnter4}
-            onMouseLeave={handleMouseLeave4}
-          >
-            <figure className="bg-opacity- ">
-              <img src={todo} alt="Shoes" />
-            </figure>
-            <div
-              className={`card-body text-center absolute bottom-0 left-0 transition-transform duration-1000 ${
-                hovered4 ? "translate-y-0" : "translate-y-full"
-              }`}
-            >
-              <div
-                className={`p-5 ${
-                  hovered4
-                    ? "transform translate-y-0 opacity-100"
-                    : "transform translate-y-12 opacity-0"
-                }`}
-                style={{ backgroundColor: "" }}
-              >
-                <h2 className="font-bold text-2xl">TO-do List</h2>
-                <p className="mt-7 text-xl font-semibold">
-                  A MERN Project : TO DO LIST
-                </p>
-                <div className="card-actions justify-center">
-                  <button className="btn btn-outline  mt-5">
-                    <a
-                      href="https://to-do-list-d5399.web.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visit Now
-                    </a>
-                  </button>
+          <div className="Uni-block" id="uni-6" data-aos="fade-left">
+            <div className="uni-main">
+              <div className="uni-card uni-card1">
+                <div className="uni-content">
+                  <img src="/img/todolistfor.jpg" alt="Image 3" />
+                </div>
+              </div>
+              <div className="uni-card uni-card2">
+                <div className="uni-content">
+                  <div>
+                    <p className="font-bold">TO-DO List</p>
+                    <div className="text-sm font-semibold text-slate-600 mt-3">
+                      <p>Track Daily Task Easily</p>
+                      <div className="flex gap-3 text-2xl mt-3 mb-3">
+                        <IoLogoReact className="text-blue-500" />
+                        <SiTailwindcss className="text-teal-500" />
+                        <IoLogoNpm className="text-red-500" />
+                        <SiExpress className="text-purple-500" />
+                        <IoLogoVercel className="text-pink-500" />
+                        <SiMongodb className="text-green-500" />
+                      </div>
+                      <button className="btn btn-outline mt-2 ">
+                        <a
+                          href="https://to-do-list-d5399.web.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Visit now
+                        </a>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Project no 5 */}
-        <div
-          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
-          data-aos="fade-right"
-        >
-          <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100 "
-            onMouseEnter={handleMouseEnter5}
-            onMouseLeave={handleMouseLeave5}
-          >
-            <figure className="bg-opacity- ">
-              <img src={snap} alt="Shoes" />
-            </figure>
-            <div
-              className={`card-body text-center absolute bottom-0 left-0 transition-transform duration-1000 ${
-                hovered5 ? "translate-y-0" : "translate-y-full"
-              }`}
-            >
-              <div
-                className={`p-5 ${
-                  hovered5
-                    ? "transform translate-y-0 opacity-100"
-                    : "transform translate-y-12 opacity-0"
-                }`}
-                style={{ backgroundColor: "" }}
-              >
-                <h2 className="font-bold text-2xl">Snap Artistry</h2>
-                <p className="mt-7 text-xl font-semibold">
-                  A MERN Project Snap Artistry
-                </p>
-                <div className="card-actions justify-center">
-                  <button className="btn btn-outline  mt-5">
-                    <a
-                      href="https://summer-camp-81b20.web.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visit Now
-                    </a>
-                  </button>
+          <div className="Uni-block" id="uni-7" data-aos="fade-right">
+            <div className="uni-main">
+              <div className="uni-card uni-card1">
+                <div className="uni-content">
+                  <img src="/img/toygem-store.jpg" alt="Image 3" />
+                </div>
+              </div>
+              <div className="uni-card uni-card2">
+                <div className="uni-content">
+                  <div>
+                    <p className="font-bold">Toy Gem</p>
+                    <div className="text-sm font-semibold text-slate-600 mt-3">
+                      <p>Buy and Sell Toys from the site</p>
+                      <div className="flex gap-3 text-2xl mt-3 mb-3">
+                        <IoLogoReact className="text-blue-500" />
+                        <SiTailwindcss className="text-teal-500" />
+                        <IoLogoNpm className="text-red-500" />
+                        <SiExpress className="text-purple-500" />
+                        <IoLogoVercel className="text-pink-500" />
+                        <SiMongodb className="text-green-500" />
+                        <IoLogoFirebase className="text-yellow-500" />
+                      </div>
+                      <button className="btn btn-outline mt-2 ">
+                        <a
+                          href="https://toy-gem.web.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Visit now
+                        </a>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Project no 6 */}
-        <div
-          className="mt-5 mb-5  flex p-1 animated-gradient rounded-xl"
-          data-aos="fade-right"
-        >
-          <div
-            className=" card w-96 bg-base-100 shadow-xl image-full relative overflow-hidden rounded-2xl100 "
-            onMouseEnter={handleMouseEnter6}
-            onMouseLeave={handleMouseLeave6}
-          >
-            <figure className="bg-opacity- ">
-              <img src={techat} alt="Shoes" />
-            </figure>
-            <div
-              className={`card-body text-center absolute bottom-0 left-0 transition-transform duration-1000 ${
-                hovered6 ? "translate-y-0" : "translate-y-full"
-              }`}
-            >
-              <div
-                className={`p-5 ${
-                  hovered6
-                    ? "transform translate-y-0 opacity-100"
-                    : "transform translate-y-12 opacity-0"
-                }`}
-                style={{ backgroundColor: "" }}
-              >
-                <h2 className="font-bold text-2xl">Tea Chat</h2>
-                <p className="mt-7 text-xl font-semibold">
-                  A Social Media Site Tea Chat
-                </p>
-                <div className="card-actions justify-center">
-                  <button className="btn btn-outline  mt-5">
-                    <a
-                      href="https://tea-chat-d0a15.web.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visit Now
-                    </a>
-                  </button>
+          <div className="Uni-block" id="uni-8" data-aos="fade-right">
+            <div className="uni-main">
+              <div className="uni-card uni-card1">
+                <div className="uni-content">
+                  <img src="/img/fooodmonkeyy.jpg" alt="Image 3" />
+                </div>
+              </div>
+              <div className="uni-card uni-card2">
+                <div className="uni-content">
+                  <div>
+                    <p className="font-bold">Food Monkey</p>
+                    <div className="text-sm font-semibold text-slate-600 mt-3">
+                      <p>Try Famous Chinese Food Recipes</p>
+                      <div className="flex gap-3 text-2xl mt-3 mb-3">
+                        <IoLogoReact className="text-blue-500" />
+                        <SiTailwindcss className="text-teal-500" />
+                        <IoLogoNpm className="text-red-500" />
+                        <SiExpress className="text-purple-500" />
+                        <IoLogoVercel className="text-pink-500" />
+                        <SiMongodb className="text-green-500" />
+                        <IoLogoFirebase className="text-yellow-500" />
+                      </div>
+                      <button className="btn btn-outline mt-2 ">
+                        <a
+                          href="https://food-monkey-83577.web.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Visit now
+                        </a>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

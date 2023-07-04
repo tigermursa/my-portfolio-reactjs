@@ -20,7 +20,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       {/* Banner  Section */}
       <Banner></Banner>
 

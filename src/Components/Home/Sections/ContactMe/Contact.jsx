@@ -64,7 +64,7 @@ const Contact = () => {
                 <span className="dot"></span>
               </div>
             </h1>
-            <div className="">
+            <div className=" ">
               <div className="contact-wrapper">
                 {/* left contact page */}
                 <div className="direct-contact-container">
@@ -134,37 +134,37 @@ const Contact = () => {
                 <form
                   ref={form}
                   onSubmit={sendEmail}
-                  className="w-96"
+                  className="w-full md:w-96 md:ms-10 ms-0"
                   role="form"
                 >
-                  <div className="form-control">
+                  <div className="mb-4">
                     <input
                       type="text"
                       name="user_name"
                       placeholder="Your Name"
-                      className="input input-bordered"
+                      className="input input-bordered w-full"
                       required
                     />
                   </div>
-                  <div className="form-control">
+                  <div className="mb-4">
                     <input
                       type="email"
                       placeholder="Your Email"
                       name="user_email"
-                      className="input input-bordered"
+                      className="input input-bordered w-full"
                       required
                     />
                   </div>
-                  <div className="form-control">
+                  <div className="mb-4">
                     <textarea
-                      className="input input-bordered textarea"
+                      className="input input-bordered textarea w-full h-40"
                       placeholder="Your Message"
                       name="message"
                       required
                     ></textarea>
                   </div>
-                  <button type="submit" className="btn btn-outline w-96">
-                    send
+                  <button type="submit" className="btn btn-outline w-full">
+                    Send
                   </button>
                 </form>
               </div>

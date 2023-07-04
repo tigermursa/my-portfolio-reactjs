@@ -1,0 +1,8 @@
+.skills-container {
+  height: 100vh; /* Adjust the height as needed */
+  overflow: scroll;
+}
+
+.skills-content {
+  min-height: 100%; /* Ensure content expands to full height */
+}

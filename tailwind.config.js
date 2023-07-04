@@ -8,13 +8,13 @@ export default {
     // daisyUI config (optional)
     daisyui: {
       styled: true,
-      themes: ["light", "dark"],
+      themes: ["luxury"],
       base: true,
       utils: true,
       logs: true,
-      rtl: false,
+      rtl: true,
       prefix: "",
-      darkTheme: "dark",
+      darkTheme: "luxury",
     },
   };
   

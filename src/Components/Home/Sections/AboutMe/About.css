@@ -37,7 +37,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: black;
+  background-color: rgb(174, 143, 33);
   margin-right: 3px;
   opacity: 0;
   animation: typing-animation 1s infinite;

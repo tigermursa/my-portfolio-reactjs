@@ -10,6 +10,7 @@ import MyServices from "./Components/Home/Sections/MyServices/MyServices.jsx";
 import AboutMe from "./Components/Home/Sections/AboutMe/AboutMe.jsx";
 import Services from "./Components/Home/Sections/MyServices/Services.jsx";
 import AboutMeDetail from "./Components/Home/Sections/AboutMe/AboutDetail.jsx";
+import ForOFor from "./Components/ForOFor/ForOFor.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         element: <AboutMeDetail></AboutMeDetail>,
       },
     ],
+  },
+  {
+    path: "/*",
+    element: <ForOFor></ForOFor>,
   },
 ]);
 

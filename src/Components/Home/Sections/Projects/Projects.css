@@ -1,0 +1,103 @@
+
+body {
+  background-color: #222;
+}
+.Uni-Blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-gap: 50px;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+.Uni-block .uni-main {
+  position: relative;
+}
+.Uni-block .uni-main .uni-card {
+  transition: 0.5s;
+  width: 300px;
+  height: 200px;
+}
+.uni-main .uni-card.uni-card1 {
+  position: relative;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+.uni-main:hover .uni-card.uni-card1 {
+  transform: translateY(0px);
+}
+.uni-main .uni-card.uni-card2 {
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  transform: translateY(-100px);
+}
+.uni-main:hover .uni-card.uni-card2 {
+  transform: translateY(0px);
+}
+/* #uni-1 .uni-card.uni-card1 .uni-content {
+  background: url('https://i.pinimg.com/564x/8f/be/17/8fbe17fd1fbe4d817aa8af5e234e5869.jpg');
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+  background-position: center center;
+} */
+
+.uni-main .uni-card.uni-card1 .uni-content p {
+  margin: 0;
+  padding: 0;
+}
+.uni-card.uni-card1 .uni-content img {
+  object-fit: initial;
+  width: 300px;
+  height: 200px;
+  object-position: center center;
+}
+
+
+
+@media (max-width: 767px) {
+    .Uni-Blocks {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+  
+    .Uni-block {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .uni-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .uni-card {
+      width: 100%;
+    }
+  }
+  
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .Uni-Blocks {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    font-size: 16px;
+  }
+}
